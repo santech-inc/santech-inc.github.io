@@ -1,0 +1,250 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(12px);
+  background: rgba(244, 248, 255, 0.82);
+  border-bottom: 1px solid rgba(35, 59, 130, 0.1);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  min-height: 78px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand-symbol {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.75rem;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  color: #fff;
+  background: var(--gradient-brand);
+  box-shadow: 0 8px 22px rgba(53, 89, 230, 0.3);
+}
+
+.brand-text {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #25335f;
+}
+
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--color-line);
+  background: #fff;
+  border-radius: 999px;
+  padding: 0.2rem;
+}
+
+.lang-button {
+  padding: 0.35rem 0.65rem;
+  background: transparent;
+  color: #50608f;
+}
+
+.lang-button.is-active {
+  background: var(--gradient-brand);
+  color: #fff;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1.25fr 0.95fr;
+  gap: var(--space-2xl);
+  align-items: center;
+  padding-top: var(--space-xl);
+}
+
+.hero-copy p {
+  max-width: 60ch;
+  font-size: 1.04rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.hero-metrics {
+  grid-template-columns: 1fr;
+}
+
+.metric {
+  padding: var(--space-lg);
+}
+
+.metric h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.35rem;
+}
+
+.cards-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cards-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cards-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.service-card,
+.case-card,
+.process-step,
+.testimonial {
+  padding: var(--space-lg);
+}
+
+.case-tag {
+  display: inline-flex;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  padding: 0.22rem 0.62rem;
+  margin-bottom: 0.7rem;
+  color: #2d4db8;
+  background: rgba(56, 86, 217, 0.1);
+}
+
+.step-index {
+  display: inline-flex;
+  margin-bottom: 0.7rem;
+  color: var(--color-secondary);
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.tech-panel {
+  padding: var(--space-xl);
+}
+
+.tech-tags {
+  list-style: none;
+  margin: var(--space-md) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.tech-tag {
+  border-radius: 999px;
+  border: 1px solid rgba(23, 96, 194, 0.24);
+  padding: 0.36rem 0.78rem;
+  color: #24406f;
+  font-size: 0.9rem;
+}
+
+.testimonial blockquote {
+  margin: 0 0 var(--space-md);
+  font-size: 1.05rem;
+  color: #273d6f;
+}
+
+.testimonial figcaption {
+  font-size: 0.9rem;
+  color: #60709a;
+}
+
+.downloads {
+  padding: var(--space-xl);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.download-actions {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.contact-box {
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+  background: var(--gradient-deep);
+  color: #fff;
+  border: none;
+  box-shadow: var(--shadow-strong);
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.contact-box p,
+.contact-box .eyebrow {
+  color: rgba(233, 239, 255, 0.88);
+}
+
+.contact-actions {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+footer {
+  padding: 2rem 0 2.5rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1000px) {
+  .cards-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cards-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-layout,
+  .downloads,
+  .contact-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .nav {
+    display: none;
+  }
+
+  .cards-2,
+  .cards-3,
+  .cards-4 {
+    grid-template-columns: 1fr;
+  }
+
+  main section {
+    padding: 2.4rem 0;
+  }
+}
