@@ -23,7 +23,8 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const distDir = resolve(root, "dist");
 
 const SITE_URL = "https://santech-inc.github.io";
-const OG_IMAGE = `${SITE_URL}/assets/brand.svg`;
+const LOGO_URL = `${SITE_URL}/assets/brand.svg`;
+const ogImage = (locale) => `${SITE_URL}/assets/og-${locale}.png`;
 
 // locale -> path relative to SITE_URL and output file inside dist/
 const targets = {
@@ -59,7 +60,7 @@ function headBlock(locale) {
     "@type": "Organization",
     name: "SanTech Inc",
     url: `${SITE_URL}/`,
-    logo: OG_IMAGE,
+    logo: LOGO_URL,
     email: content[locale].contact.email,
     description: content[locale].meta.description,
   };
@@ -67,7 +68,10 @@ function headBlock(locale) {
   const lines = [
     `<link rel="canonical" href="${canonical}" />`,
     `<meta property="og:url" content="${canonical}" />`,
-    `<meta property="og:image" content="${OG_IMAGE}" />`,
+    `<meta property="og:image" content="${ogImage(locale)}" />`,
+    `<meta property="og:image:width" content="1200" />`,
+    `<meta property="og:image:height" content="630" />`,
+    `<meta property="og:image:alt" content="${escapeAttr(content[locale].meta.title)}" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
   ];
   for (const [code, t] of Object.entries(targets)) {

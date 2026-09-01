@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
+    "og": "node scripts/og.mjs",
     "serve": "npx --yes serve dist",
     "dev": "node scripts/build.mjs && npx --yes serve dist"
   }

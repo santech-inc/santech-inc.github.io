@@ -44,3 +44,5 @@ El idioma se controla con botones ES/EN en header y se persiste en localStorage 
   idioma (`dist/index.html` en ES, `dist/en/index.html` en EN), metadata SEO/Open Graph,
   `canonical` y `hreflang`. `npm run dev` construye y sirve `dist/`.
 - Despliega el contenido de `dist/`. Ajusta `SITE_URL` en `scripts/build.mjs` al dominio real.
+- Tarjetas Open Graph: `npm run og` regenera `assets/og-es.png` / `assets/og-en.png`
+  (1200x630) desde `scripts/og.mjs`; requiere ImageMagick. Commitea los PNG resultantes.
