@@ -22,7 +22,7 @@ import { renderFooter } from "../js/components/footer.js";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const distDir = resolve(root, "dist");
 
-const SITE_URL = "https://santechinc.com";
+const SITE_URL = "https://santech-inc.github.io";
 const OG_IMAGE = `${SITE_URL}/assets/brand.svg`;
 
 // locale -> path relative to SITE_URL and output file inside dist/
