@@ -1,10 +1,12 @@
+import { escapeHtml } from "../utils/escape.js";
+
 export function renderTestimonials(data) {
   const items = data.testimonials.items
     .map(
       (item) => `
         <figure class="testimonial panel reveal">
-          <blockquote>${item.quote}</blockquote>
-          <figcaption>${item.author}</figcaption>
+          <blockquote>${escapeHtml(item.quote)}</blockquote>
+          <figcaption>${escapeHtml(item.author)}</figcaption>
         </figure>
       `
     )
@@ -12,7 +14,7 @@ export function renderTestimonials(data) {
 
   return `
     <div class="container">
-      <span class="eyebrow">${data.testimonials.title}</span>
+      <span class="eyebrow">${escapeHtml(data.testimonials.title)}</span>
       <div class="grid cards-2">
         ${items}
       </div>

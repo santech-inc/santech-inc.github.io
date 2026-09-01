@@ -4,11 +4,13 @@ Landing one-page bilingue (ES/EN) implementada con HTML, CSS y JavaScript estati
 
 ## Estructura
 
-- index.html: shell semantico y puntos de montaje.
-- css/: tokens, base, fondo y estilos por seccion.
+- index.html: shell semantico, puntos de montaje y plantilla del build.
+- css/: tokens, base, fondo, header y estilos por seccion.
 - data/content.js: fuente unica de contenido ES/EN.
 - js/components/: renderizadores modulares por seccion.
-- js/main.js: orquestacion, i18n y metadata dinamica.
+- js/utils/escape.js: escape de HTML para interpolar contenido de forma segura.
+- js/main.js: orquestacion, i18n, hidratacion y metadata dinamica.
+- scripts/build.mjs: pre-render estatico por idioma hacia dist/.
 - .github/skills/: skills especializados para desarrollo y optimizacion.
 - .github/agents/: agentes especializados para arquitectura UI, contenido bilingue y rendimiento.
 
@@ -37,4 +39,8 @@ El idioma se controla con botones ES/EN en header y se persiste en localStorage 
 
 ## Ejecucion local
 
-Al ser estatico, puedes abrir index.html directamente o servir el directorio con un servidor estatico.
+- Desarrollo rapido: abre `index.html` directamente; el contenido se renderiza en cliente.
+- Salida de produccion: `npm run build` genera `dist/` con el HTML pre-renderizado por
+  idioma (`dist/index.html` en ES, `dist/en/index.html` en EN), metadata SEO/Open Graph,
+  `canonical` y `hreflang`. `npm run dev` construye y sirve `dist/`.
+- Despliega el contenido de `dist/`. Ajusta `SITE_URL` en `scripts/build.mjs` al dominio real.

@@ -23,55 +23,129 @@ const ids = {
   footer: document.getElementById("site-footer"),
   metaDescription: document.getElementById("meta-description"),
   ogDescription: document.getElementById("og-description"),
+  ogTitle: document.getElementById("og-title"),
 };
 
-const defaultLocale = "es";
+const sectionRenderers = [
+  ["hero", renderHero],
+  ["services", renderServices],
+  ["portfolio", renderPortfolio],
+  ["process", renderProcess],
+  ["technology", renderTechnology],
+  ["testimonials", renderTestimonials],
+  ["downloads", renderDownloads],
+  ["contact", renderContact],
+  ["footer", renderFooter],
+];
+
+const locales = Object.keys(content);
+const defaultLocale = locales.includes("es") ? "es" : locales[0];
 const localeKey = "santech-locale";
 
 function getLocale() {
-  const savedLocale = localStorage.getItem(localeKey);
+  let savedLocale = null;
+  try {
+    savedLocale = localStorage.getItem(localeKey);
+  } catch (error) {
+    savedLocale = null;
+  }
   return savedLocale && content[savedLocale] ? savedLocale : defaultLocale;
+}
+
+function persistLocale(locale) {
+  try {
+    localStorage.setItem(localeKey, locale);
+  } catch (error) {
+    /* storage unavailable (private mode, blocked) — non-fatal */
+  }
 }
 
 function syncMeta(data, locale) {
   document.title = data.meta.title;
-  ids.metaDescription.setAttribute("content", data.meta.description);
-  ids.ogDescription.setAttribute("content", data.meta.description);
+  ids.metaDescription?.setAttribute("content", data.meta.description);
+  ids.ogDescription?.setAttribute("content", data.meta.description);
+  ids.ogTitle?.setAttribute("content", data.meta.title);
   document.documentElement.lang = locale;
 }
 
-function bindLanguageSwitcher() {
-  const langButtons = document.querySelectorAll(".lang-button");
+function closeMobileNav() {
+  const toggle = ids.header?.querySelector(".nav-toggle");
+  if (!toggle) {
+    return;
+  }
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.setAttribute("aria-label", toggle.dataset.labelOpen ?? "");
+  ids.header?.classList.remove("nav-open");
+}
 
-  langButtons.forEach((button) => {
+function bindHeader(locale) {
+  const header = ids.header;
+  if (!header) {
+    return;
+  }
+
+  header.querySelectorAll(".lang-button").forEach((button) => {
     button.addEventListener("click", () => {
       const nextLocale = button.dataset.locale;
-      if (!nextLocale || !content[nextLocale]) {
+      if (!nextLocale || !content[nextLocale] || nextLocale === locale) {
         return;
       }
-
-      localStorage.setItem(localeKey, nextLocale);
+      persistLocale(nextLocale);
       render(nextLocale);
     });
+  });
+
+  const toggle = header.querySelector(".nav-toggle");
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      const isOpen = header.classList.toggle("nav-open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.setAttribute(
+        "aria-label",
+        (isOpen ? toggle.dataset.labelClose : toggle.dataset.labelOpen) ?? ""
+      );
+    });
+  }
+
+  header.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", closeMobileNav);
+  });
+}
+
+function bindGlobal() {
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMobileNav();
+    }
   });
 }
 
 function render(locale) {
   const data = content[locale];
 
-  ids.header.innerHTML = renderHeader(data, locale);
-  ids.hero.innerHTML = renderHero(data);
-  ids.services.innerHTML = renderServices(data);
-  ids.portfolio.innerHTML = renderPortfolio(data);
-  ids.process.innerHTML = renderProcess(data);
-  ids.technology.innerHTML = renderTechnology(data);
-  ids.testimonials.innerHTML = renderTestimonials(data);
-  ids.downloads.innerHTML = renderDownloads(data);
-  ids.contact.innerHTML = renderContact(data);
-  ids.footer.innerHTML = renderFooter(data);
+  if (ids.header) {
+    ids.header.innerHTML = renderHeader(data, locale);
+  }
+  sectionRenderers.forEach(([key, renderSection]) => {
+    if (ids[key]) {
+      ids[key].innerHTML = renderSection(data);
+    }
+  });
 
   syncMeta(data, locale);
-  bindLanguageSwitcher();
+  bindHeader(locale);
 }
 
-render(getLocale());
+const initialLocale = getLocale();
+const prerenderedLocale = document.documentElement.dataset.renderedLocale;
+
+if (prerenderedLocale === initialLocale) {
+  // Static build already emitted this locale's markup — just wire up behavior
+  // and skip the full re-render (avoids re-running the reveal animations).
+  syncMeta(content[initialLocale], initialLocale);
+  bindHeader(initialLocale);
+} else {
+  render(initialLocale);
+}
+
+bindGlobal();

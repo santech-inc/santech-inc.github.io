@@ -1,0 +1,118 @@
+/* Header extras: brand mark, mobile navigation toggle, no-JS note. */
+
+.brand-symbol {
+  background: transparent;
+  box-shadow: 0 8px 22px rgba(53, 89, 230, 0.3);
+  overflow: hidden;
+}
+
+.brand-symbol svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-toggle-bar,
+.nav-toggle-bar::before,
+.nav-toggle-bar::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 18px;
+  height: 2px;
+  background: var(--color-ink);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle-bar {
+  top: 50%;
+  margin-top: -1px;
+}
+
+.nav-toggle-bar::before {
+  top: -6px;
+}
+
+.nav-toggle-bar::after {
+  top: 6px;
+}
+
+.nav-open .nav-toggle-bar {
+  background: transparent;
+}
+
+.nav-open .nav-toggle-bar::before {
+  transform: translateX(-50%) translateY(6px) rotate(45deg);
+}
+
+.nav-open .nav-toggle-bar::after {
+  transform: translateX(-50%) translateY(-6px) rotate(-45deg);
+}
+
+.noscript-note {
+  width: min(100% - 2rem, var(--container));
+  margin: var(--space-lg) auto;
+  padding: var(--space-md);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 760px) {
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    order: 3;
+  }
+
+  .lang-switch {
+    order: 2;
+  }
+
+  .nav {
+    order: 4;
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: var(--space-xs) 0;
+  }
+
+  .header-inner {
+    flex-wrap: wrap;
+    row-gap: var(--space-sm);
+  }
+
+  .nav-open .nav {
+    display: flex;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 0.75rem 0.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-toggle-bar,
+  .nav-toggle-bar::before,
+  .nav-toggle-bar::after {
+    transition: none;
+  }
+}

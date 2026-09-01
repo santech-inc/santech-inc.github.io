@@ -4,6 +4,13 @@ export const content = {
       title: "SanTech Inc | Desarrollo de Software a Medida",
       description:
         "Transformamos ideas en productos digitales escalables con enfoque en velocidad, calidad y negocio.",
+      ogLocale: "es_ES",
+    },
+    a11y: {
+      navLabel: "Navegación principal",
+      langSwitchLabel: "Cambio de idioma",
+      navToggleOpen: "Abrir menú",
+      navToggleClose: "Cerrar menú",
     },
     nav: [
       { label: "Servicios", href: "#services" },
@@ -112,9 +119,11 @@ export const content = {
       docsUrl: "#",
     },
     contact: {
+      eyebrow: "Contacto",
       title: "Convirtamos tu próxima idea en un producto sólido",
       description: "Cuéntanos tu reto y recibe una propuesta técnica en menos de 48 horas.",
       button: "Escribir a SanTech",
+      whatsappLabel: "WhatsApp",
       email: "hola@santechinc.com",
       whatsapp: "https://wa.me/00000000000",
     },
@@ -128,6 +137,13 @@ export const content = {
       title: "SanTech Inc | Custom Software Development",
       description:
         "We turn ideas into scalable digital products with a strong focus on speed, quality, and business impact.",
+      ogLocale: "en_US",
+    },
+    a11y: {
+      navLabel: "Primary navigation",
+      langSwitchLabel: "Language switch",
+      navToggleOpen: "Open menu",
+      navToggleClose: "Close menu",
     },
     nav: [
       { label: "Services", href: "#services" },
@@ -236,9 +252,11 @@ export const content = {
       docsUrl: "#",
     },
     contact: {
+      eyebrow: "Contact",
       title: "Let us turn your next idea into a robust product",
       description: "Tell us your challenge and get a technical proposal in under 48 hours.",
       button: "Contact SanTech",
+      whatsappLabel: "WhatsApp",
       email: "hello@santechinc.com",
       whatsapp: "https://wa.me/00000000000",
     },

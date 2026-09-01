@@ -1,0 +1,12 @@
+{
+  "name": "santechinc-web",
+  "version": "1.0.0",
+  "description": "SanTech Inc bilingual landing page (static, no framework).",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "serve": "npx --yes serve dist",
+    "dev": "node scripts/build.mjs && npx --yes serve dist"
+  }
+}

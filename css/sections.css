@@ -234,10 +234,6 @@ footer {
 }
 
 @media (max-width: 760px) {
-  .nav {
-    display: none;
-  }
-
   .cards-2,
   .cards-3,
   .cards-4 {
