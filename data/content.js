@@ -58,6 +58,10 @@ export const content = {
           name: "BuMa",
           tag: "Gestión de negocio",
           impact: "Control integral de inventario, ventas y finanzas en una sola app para pymes.",
+          links: [
+            { url: "https://play.google.com/store/apps/details?id=com.santech.buma", label: "Ver en Google Play" },
+            { url: "https://buma-santech.github.io/", label: "Sitio del proyecto" },
+          ],
         },
         {
           name: "Simon",
@@ -207,6 +211,10 @@ export const content = {
           name: "BuMa",
           tag: "Business management",
           impact: "Complete inventory, sales, and finance control in a single app for small businesses.",
+          links: [
+            { url: "https://play.google.com/store/apps/details?id=com.santech.buma", label: "View on Google Play" },
+            { url: "https://buma-santech.github.io/", label: "Project site" },
+          ],
         },
         {
           name: "Simon",

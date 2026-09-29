@@ -2,16 +2,24 @@ import { escapeHtml } from "../utils/escape.js";
 
 export function renderPortfolio(data) {
   const items = data.portfolio.items
-    .map(
-      (item) => `
+    .map((item) => {
+      const links = item.links || (item.link ? [{ url: item.link, label: item.linkLabel || item.link }] : []);
+      const linksHtml = links
+        .map(
+          (l) =>
+            `<a class="case-link" href="${escapeHtml(l.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(l.label || l.url)}</a>`
+        )
+        .join("");
+
+      return `
         <article class="case-card panel reveal">
           <span class="case-tag">${escapeHtml(item.tag)}</span>
           <h3>${escapeHtml(item.name)}</h3>
           <p>${escapeHtml(item.impact)}</p>
-          ${item.link ? `<a class="case-link" href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.linkLabel || item.link)}</a>` : ""}
+          ${linksHtml ? `<div class="case-links">${linksHtml}</div>` : ""}
         </article>
-      `
-    )
+      `;
+    })
     .join("");
 
   return `
