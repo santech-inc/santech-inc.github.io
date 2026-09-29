@@ -8,6 +8,7 @@ export function renderPortfolio(data) {
           <span class="case-tag">${escapeHtml(item.tag)}</span>
           <h3>${escapeHtml(item.name)}</h3>
           <p>${escapeHtml(item.impact)}</p>
+          ${item.link ? `<a class="case-link" href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.linkLabel || item.link)}</a>` : ""}
         </article>
       `
     )
