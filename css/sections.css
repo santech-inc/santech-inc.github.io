@@ -120,6 +120,12 @@
   padding: var(--space-lg);
 }
 
+.portfolio-note {
+  margin-top: var(--space-md);
+  font-size: 0.85rem;
+  color: var(--color-muted, #6b7280);
+}
+
 .case-tag {
   display: inline-flex;
   border-radius: 999px;

@@ -16,9 +16,10 @@ export function renderPortfolio(data) {
   return `
     <div class="container">
       <span class="eyebrow">${escapeHtml(data.portfolio.title)}</span>
-      <div class="grid cards-3">
+      <div class="grid cards-4">
         ${items}
       </div>
+      ${data.portfolio.note ? `<p class="portfolio-note">${escapeHtml(data.portfolio.note)}</p>` : ""}
     </div>
   `;
 }

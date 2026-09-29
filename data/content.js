@@ -27,9 +27,9 @@ export const content = {
       primaryCta: "Agendar diagnóstico",
       secondaryCta: "Ver casos",
       metrics: [
-        { value: "42+", label: "Proyectos entregados" },
-        { value: "97%", label: "Clientes recurrentes" },
-        { value: "3.2x", label: "Aceleración promedio" },
+        { value: "5+", label: "Apps publicadas" },
+        { value: "3", label: "Plataformas (iOS, Android, macOS)" },
+        { value: "100%", label: "Enfoque multiplataforma" },
       ],
     },
     services: {
@@ -52,21 +52,27 @@ export const content = {
     },
     portfolio: {
       title: "Casos destacados",
+      note: "Mostramos nuestras soluciones públicas. Los proyectos desarrollados para clientes bajo acuerdo de confidencialidad no se listan aquí.",
       items: [
         {
-          name: "FinTrack Suite",
-          tag: "Fintech",
-          impact: "-36% en tiempo de operación y +28% en activación.",
+          name: "BuMa",
+          tag: "Gestión de negocio",
+          impact: "Control integral de inventario, ventas y finanzas en una sola app para pymes.",
         },
         {
-          name: "PulseCare Connect",
-          tag: "HealthTech",
-          impact: "Integración interoperable con 5 sistemas y lanzamiento en 12 semanas.",
+          name: "Simon",
+          tag: "Entretenimiento",
+          impact: "Juego de memoria estilo arcade con experiencia móvil pulida, publicado en Google Play.",
         },
         {
-          name: "LogixFlow",
-          tag: "Logística",
-          impact: "Monitoreo en tiempo real y mejora de SLA del 21%.",
+          name: "Apple2Google Maps",
+          tag: "Utilidades",
+          impact: "Convierte enlaces de Apple Maps a Google Maps y Waze, resolviendo la incompatibilidad entre plataformas.",
+        },
+        {
+          name: "BigFolderWidget",
+          tag: "Utilidades",
+          impact: "Widget de carpetas para organizar apps y accesos directos desde la pantalla de inicio en iOS.",
         },
       ],
     },
@@ -82,15 +88,14 @@ export const content = {
     technology: {
       title: "Stack y capacidades",
       tags: [
-        "TypeScript",
-        "React",
-        "Node.js",
-        "Python",
-        ".NET",
-        "PostgreSQL",
-        "Azure",
-        "Docker",
-        "CI/CD",
+        "Flutter",
+        "Dart",
+        "Swift",
+        "Kotlin",
+        "Firebase",
+        "iOS",
+        "Android",
+        "macOS",
       ],
     },
     testimonials: {
@@ -98,24 +103,24 @@ export const content = {
       items: [
         {
           quote:
-            "No solo ejecutaron rápido, también entendieron el negocio y nos ayudaron a priorizar mejor.",
-          author: "Directora de Producto, FinTrack",
+            "Nos ayudaron a llevar la gestión de nuestro negocio a una sola app, sin fricciones ni curva de aprendizaje larga.",
+          author: "Fundador de negocio local",
         },
         {
           quote:
-            "Pasamos de una plataforma lenta a una base escalable con entregas predecibles.",
-          author: "CTO, LogixFlow",
+            "La app quedó estable, rápida y con muy buena respuesta de los usuarios desde el primer lanzamiento.",
+          author: "Cliente independiente",
         },
       ],
     },
     downloads: {
       title: "Zona de descargas",
-      description: "Accede a nuestras apps y recursos técnicos desde tus plataformas preferidas.",
-      android: "Ver nuestras apps en Google Play",
-      ios: "Descargar en App Store",
+      description: "Conoce nuestro trabajo publicado en las tiendas de aplicaciones.",
+      android: "Perfil de desarrollador en Google Play",
+      ios: "BigFolderWidget en iOS",
       docs: "Descargar brochure técnico",
       androidUrl: "https://play.google.com/store/apps/dev?id=7795062710980776466",
-      iosUrl: "#",
+      iosUrl: "https://big-icon-folder-widget.github.io/",
       docsUrl: "#",
     },
     contact: {
@@ -124,8 +129,8 @@ export const content = {
       description: "Cuéntanos tu reto y recibe una propuesta técnica en menos de 48 horas.",
       button: "Escribir a SanTech",
       whatsappLabel: "WhatsApp",
-      email: "hola@santechinc.com",
-      whatsapp: "https://wa.me/00000000000",
+      email: "sanincdev@gmail.com",
+      whatsapp: "https://wa.me/34643844773",
     },
     footer: {
       copy: "SanTech Inc. Desarrollo de software orientado a resultados.",
@@ -160,9 +165,9 @@ export const content = {
       primaryCta: "Book a discovery call",
       secondaryCta: "See case studies",
       metrics: [
-        { value: "42+", label: "Projects delivered" },
-        { value: "97%", label: "Returning clients" },
-        { value: "3.2x", label: "Average acceleration" },
+        { value: "5+", label: "Apps published" },
+        { value: "3", label: "Platforms (iOS, Android, macOS)" },
+        { value: "100%", label: "Cross-platform focus" },
       ],
     },
     services: {
@@ -185,21 +190,27 @@ export const content = {
     },
     portfolio: {
       title: "Featured cases",
+      note: "We showcase our public solutions. Projects built for clients under a confidentiality agreement are not listed here.",
       items: [
         {
-          name: "FinTrack Suite",
-          tag: "Fintech",
-          impact: "-36% operational time and +28% activation.",
+          name: "BuMa",
+          tag: "Business management",
+          impact: "Complete inventory, sales, and finance control in a single app for small businesses.",
         },
         {
-          name: "PulseCare Connect",
-          tag: "HealthTech",
-          impact: "Interoperable integration with 5 systems and launch in 12 weeks.",
+          name: "Simon",
+          tag: "Entertainment",
+          impact: "Arcade-style memory game with a polished mobile experience, published on Google Play.",
         },
         {
-          name: "LogixFlow",
-          tag: "Logistics",
-          impact: "Real-time monitoring and 21% SLA improvement.",
+          name: "Apple2Google Maps",
+          tag: "Utilities",
+          impact: "Converts Apple Maps links to Google Maps and Waze, solving cross-platform compatibility issues.",
+        },
+        {
+          name: "BigFolderWidget",
+          tag: "Utilities",
+          impact: "Folder widget for organizing apps and shortcuts from the iOS home screen.",
         },
       ],
     },
@@ -215,15 +226,14 @@ export const content = {
     technology: {
       title: "Stack and capabilities",
       tags: [
-        "TypeScript",
-        "React",
-        "Node.js",
-        "Python",
-        ".NET",
-        "PostgreSQL",
-        "Azure",
-        "Docker",
-        "CI/CD",
+        "Flutter",
+        "Dart",
+        "Swift",
+        "Kotlin",
+        "Firebase",
+        "iOS",
+        "Android",
+        "macOS",
       ],
     },
     testimonials: {
@@ -231,24 +241,24 @@ export const content = {
       items: [
         {
           quote:
-            "They did not just move fast, they understood our business and improved prioritization.",
-          author: "Product Director, FinTrack",
+            "They helped us bring our business management into a single app, with no friction and a short learning curve.",
+          author: "Local business owner",
         },
         {
           quote:
-            "We moved from a fragile platform to a scalable base with predictable delivery.",
-          author: "CTO, LogixFlow",
+            "The app was stable, fast, and got great feedback from users right from launch.",
+          author: "Independent client",
         },
       ],
     },
     downloads: {
       title: "Downloads",
-      description: "Access our apps and technical resources from your preferred platforms.",
-      android: "See our apps on Google Play",
-      ios: "Download on the App Store",
+      description: "Check out our published work on the app stores.",
+      android: "Developer profile on Google Play",
+      ios: "BigFolderWidget on iOS",
       docs: "Download technical brochure",
       androidUrl: "https://play.google.com/store/apps/dev?id=7795062710980776466",
-      iosUrl: "#",
+      iosUrl: "https://big-icon-folder-widget.github.io/",
       docsUrl: "#",
     },
     contact: {
@@ -257,8 +267,8 @@ export const content = {
       description: "Tell us your challenge and get a technical proposal in under 48 hours.",
       button: "Contact SanTech",
       whatsappLabel: "WhatsApp",
-      email: "hello@santechinc.com",
-      whatsapp: "https://wa.me/00000000000",
+      email: "sanincdev@gmail.com",
+      whatsapp: "https://wa.me/34643844773",
     },
     footer: {
       copy: "SanTech Inc. Software development focused on outcomes.",
