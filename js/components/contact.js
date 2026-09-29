@@ -12,7 +12,6 @@ export function renderContact(data) {
       </div>
       <div class="contact-actions">
         <a class="button button-primary" href="mailto:${escapeHtml(contact.email)}">${escapeHtml(contact.button)}</a>
-        <a class="button button-secondary" href="${escapeHtml(contact.whatsapp)}" target="_blank" rel="noopener noreferrer">${escapeHtml(contact.whatsappLabel)}</a>
       </div>
     </div>
   `;
