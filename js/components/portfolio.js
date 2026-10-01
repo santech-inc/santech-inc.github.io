@@ -26,6 +26,7 @@ export function renderPortfolio(data) {
   return `
     <div class="container">
       <span class="eyebrow">${escapeHtml(data.portfolio.title)}</span>
+      <h2>${escapeHtml(data.portfolio.heading)}</h2>
       <div class="portfolio-grid">
         ${items}
       </div>

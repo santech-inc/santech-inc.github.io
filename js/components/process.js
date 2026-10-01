@@ -16,6 +16,7 @@ export function renderProcess(data) {
   return `
     <div class="container">
       <span class="eyebrow">${escapeHtml(data.process.title)}</span>
+      <h2>${escapeHtml(data.process.heading)}</h2>
       <div class="process-track">
         ${items}
       </div>

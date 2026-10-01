@@ -1,63 +1,67 @@
 export const content = {
   es: {
     meta: {
-      title: "SanTech Inc | Desarrollo de Software a Medida",
+      title: "Desarrollo de Apps Móviles y Software a Medida | SanTech Inc",
       description:
-        "Transformamos ideas en productos digitales escalables con enfoque en velocidad, calidad y negocio.",
+        "Desarrollamos apps iOS y Android con Flutter, Swift y Kotlin, y software de escritorio multiplataforma. Recibe una propuesta técnica en menos de 48 horas.",
       ogLocale: "es_ES",
+      siteName: "SanTech Inc",
     },
     a11y: {
       navLabel: "Navegación principal",
       langSwitchLabel: "Cambio de idioma",
       navToggleOpen: "Abrir menú",
       navToggleClose: "Cerrar menú",
+      homeLabel: "SanTech Inc, inicio",
     },
     nav: [
       { label: "Servicios", href: "#services" },
       { label: "Casos", href: "#portfolio" },
       { label: "Proceso", href: "#process" },
-      { label: "Tecnología", href: "#technology" },
+      { label: "FAQ", href: "#faq" },
       { label: "Repo", href: "/repo/" },
       { label: "Contacto", href: "#contact" },
     ],
     hero: {
-      badge: "Software de alto impacto",
-      title: "Construimos productos digitales que convierten estrategia en crecimiento real.",
+      badge: "Apps iOS, Android y escritorio",
+      title: "Apps móviles y software a medida, listos para crecer.",
       description:
-        "En SanTech Inc diseñamos, desarrollamos y optimizamos soluciones de software con mentalidad de producto.",
-      primaryCta: "Agendar diagnóstico",
-      secondaryCta: "Ver casos",
+        "Diseñamos y desarrollamos apps iOS y Android, software de escritorio y productos digitales con mentalidad de producto: del diagnóstico al lanzamiento en las tiendas.",
+      primaryCta: "Solicitar propuesta",
+      secondaryCta: "Ver apps publicadas",
       metrics: [
-        { value: "5+", label: "Apps publicadas" },
+        { value: "5+", label: "Apps gratis publicadas en dominio público" },
         { value: "5", label: "Plataformas (iOS, Android, Windows, macOS, Linux)" },
-        { value: "100%", label: "Enfoque multiplataforma" },
+        { value: "48 h", label: "Para tu propuesta técnica" },
       ],
     },
     services: {
       title: "Servicios",
-      description: "Equipos multidisciplinarios para resolver producto, tecnología y escala.",
+      description: "Desarrollo de apps y software multiplataforma, de la idea al lanzamiento.",
       items: [
         {
-          title: "Product Discovery",
-          text: "Validamos alcance, riesgo técnico y valor de negocio antes de construir.",
+          title: "Apps móviles iOS y Android",
+          text: "Apps con Flutter desde una sola base de código, o nativas con Swift y Kotlin cuando el producto lo exige. Incluye backend con Firebase y publicación en las tiendas.",
         },
         {
-          title: "Desarrollo Full Stack",
-          text: "Arquitecturas modernas para web, móvil y backend con foco en mantenibilidad.",
+          title: "Software de escritorio multiplataforma",
+          text: "Aplicaciones para macOS, Windows y Linux con C++ y Qt: rendimiento nativo, una sola base de código y distribución lista para tus usuarios.",
         },
         {
-          title: "Modernización y Escalabilidad",
-          text: "Refactorizamos plataformas existentes para ganar velocidad, estabilidad y costo eficiente.",
+          title: "Producto y modernización",
+          text: "Validamos alcance y riesgo técnico antes de construir, y refactorizamos apps existentes para ganar velocidad, estabilidad y menor costo de mantenimiento.",
         },
       ],
     },
     portfolio: {
       title: "Casos destacados",
+      heading: "Apps y proyectos que ya están en producción",
       note: "Mostramos nuestras soluciones públicas. Los proyectos desarrollados para clientes bajo acuerdo de confidencialidad no se listan aquí.",
       items: [
         {
           name: "BuMa",
           tag: "Gestión de negocio",
+          category: "BusinessApplication",
           impact: "Control integral de inventario, ventas y finanzas en una sola app para pymes.",
           links: [
             { url: "https://play.google.com/store/apps/details?id=com.santech.buma", label: "Ver en Google Play" },
@@ -65,8 +69,9 @@ export const content = {
           ],
         },
         {
-          name: "Simon",
+          name: "Simon in Space",
           tag: "Entretenimiento",
+          category: "GameApplication",
           impact: "Juego de memoria estilo arcade con experiencia móvil pulida.",
           links: [
             { url: "https://simon-in-space-game.github.io/", label: "Jugar ahora" },
@@ -76,6 +81,7 @@ export const content = {
         {
           name: "Apple2Google Maps",
           tag: "Utilidades",
+          category: "UtilitiesApplication",
           impact: "Convierte enlaces de Apple Maps a Google Maps y Waze, resolviendo la incompatibilidad entre plataformas.",
           links: [
             { url: "https://a2gmapc.github.io/", label: "Sitio del proyecto" },
@@ -86,12 +92,14 @@ export const content = {
         {
           name: "BigFolderWidget",
           tag: "Utilidades",
+          category: "UtilitiesApplication",
           impact: "Widget de carpetas para organizar apps y accesos directos desde la pantalla de inicio en iOS.",
           links: [{ url: "https://big-icon-folder-widget.github.io/", label: "Sitio del proyecto" }],
         },
         {
           name: "PsiphonQt",
           tag: "Open Source",
+          category: "DesktopEnhancementApplication",
           impact: "Cliente de escritorio multiplataforma para Psiphon construido con Qt, disponible en macOS, Linux y Windows.",
           links: [{ url: "https://github.com/santech-inc/PsiphonQt", label: "Ver código en GitHub" }],
         },
@@ -99,6 +107,7 @@ export const content = {
     },
     process: {
       title: "Cómo trabajamos",
+      heading: "Un proceso claro, del diagnóstico al lanzamiento",
       steps: [
         { title: "Diagnóstico", text: "Mapeamos objetivos, restricciones y métricas de éxito." },
         { title: "Diseño de solución", text: "Definimos arquitectura, roadmap y backlog priorizado." },
@@ -108,21 +117,12 @@ export const content = {
     },
     technology: {
       title: "Stack y capacidades",
-      tags: [
-        "Flutter",
-        "Dart",
-        "Swift",
-        "Kotlin",
-        "C++",
-        "Qt",
-        "Firebase",
-        "iOS",
-        "Android",
-        "macOS",
-      ],
+      heading: "Tecnología nativa y multiplataforma",
+      tags: ["Flutter", "Dart", "Swift", "Kotlin", "C++", "Qt", "Firebase", "iOS", "Android", "macOS"],
     },
     testimonials: {
       title: "Lo que dicen nuestros clientes",
+      heading: "Resultados que nuestros clientes notan",
       items: [
         {
           quote:
@@ -136,84 +136,128 @@ export const content = {
         },
       ],
     },
+    faq: {
+      title: "Preguntas frecuentes",
+      heading: "Lo que nos preguntan antes de empezar",
+      items: [
+        {
+          q: "¿Desarrollan apps para iOS y Android?",
+          a: "Sí. Usamos Flutter para lanzar en iOS y Android desde una sola base de código, y Swift o Kotlin cuando el proyecto necesita una integración nativa profunda.",
+        },
+        {
+          q: "¿Flutter o desarrollo nativo: qué conviene a mi proyecto?",
+          a: "Flutter reduce tiempo y costo cuando necesitas ambas plataformas con la misma experiencia. El desarrollo nativo conviene para funciones muy ligadas al sistema, como widgets o extensiones. Lo definimos contigo en el diagnóstico inicial.",
+        },
+        {
+          q: "¿Cuánto cuesta y cuánto tarda desarrollar una app?",
+          a: "Depende del alcance, las integraciones y las plataformas. Después del diagnóstico recibes en menos de 48 horas una propuesta técnica con alcance, plazos y costo.",
+        },
+        {
+          q: "¿También desarrollan software de escritorio?",
+          a: "Sí. Construimos aplicaciones para macOS, Windows y Linux con C++ y Qt, como nuestro cliente open source PsiphonQt.",
+        },
+        {
+          q: "¿Me ayudan a publicar la app en Google Play y App Store?",
+          a: "Sí. Preparamos la ficha, los recursos gráficos y el envío, y te acompañamos durante la revisión de cada tienda.",
+        },
+        {
+          q: "¿Firman acuerdos de confidencialidad (NDA)?",
+          a: "Sí. Muchos de nuestros proyectos se desarrollan bajo NDA; por eso no todos aparecen en el portafolio público.",
+        },
+        {
+          q: "¿Ofrecen mantenimiento después del lanzamiento?",
+          a: "Sí. Medimos el impacto, corregimos incidencias, actualizamos dependencias y evolucionamos el producto en iteraciones cortas.",
+        },
+      ],
+    },
     downloads: {
       title: "Zona de descargas",
-      description: "Conoce nuestro trabajo publicado en las tiendas de aplicaciones.",
+      description: "Prueba nuestras apps publicadas en Google Play.",
       android: "Perfil de desarrollador en Google Play",
       androidUrl: "https://play.google.com/store/apps/dev?id=7795062710980776466",
     },
     contact: {
       eyebrow: "Contacto",
-      title: "Convirtamos tu próxima idea en un producto sólido",
-      description: "Cuéntanos tu reto y recibe una propuesta técnica en menos de 48 horas.",
+      title: "Convirtamos tu próxima idea en una app sólida",
+      description: "Cuéntanos tu reto y recibe una propuesta técnica en menos de 48 horas, sin compromiso.",
       button: "Escribir a SanTech",
+      subject: "Propuesta para mi proyecto",
       email: "sanincdev@gmail.com",
     },
     footer: {
-      copy: "SanTech Inc. Desarrollo de software orientado a resultados.",
+      copy: "SanTech Inc. Desarrollo de apps móviles y software a medida.",
       rights: "Todos los derechos reservados.",
       repoLink: { label: "Repositorio de apps", href: "/repo/" },
+    },
+    notFound: {
+      title: "Página no encontrada",
+      text: "La página que buscas no existe o cambió de dirección.",
+      cta: "Volver al inicio",
     },
   },
   en: {
     meta: {
-      title: "SanTech Inc | Custom Software Development",
+      title: "Mobile App & Custom Software Development | SanTech Inc",
       description:
-        "We turn ideas into scalable digital products with a strong focus on speed, quality, and business impact.",
+        "We build iOS and Android apps with Flutter, Swift and Kotlin, plus cross-platform desktop software. Get a technical proposal in under 48 hours.",
       ogLocale: "en_US",
+      siteName: "SanTech Inc",
     },
     a11y: {
       navLabel: "Primary navigation",
       langSwitchLabel: "Language switch",
       navToggleOpen: "Open menu",
       navToggleClose: "Close menu",
+      homeLabel: "SanTech Inc, home",
     },
     nav: [
       { label: "Services", href: "#services" },
       { label: "Cases", href: "#portfolio" },
       { label: "Process", href: "#process" },
-      { label: "Technology", href: "#technology" },
+      { label: "FAQ", href: "#faq" },
       { label: "Repo", href: "/repo/" },
       { label: "Contact", href: "#contact" },
     ],
     hero: {
-      badge: "High-impact software",
-      title: "We build digital products that turn strategy into measurable growth.",
+      badge: "iOS, Android and desktop apps",
+      title: "Mobile apps and custom software, built to grow.",
       description:
-        "At SanTech Inc we design, build and optimize software solutions with a product mindset.",
-      primaryCta: "Book a discovery call",
-      secondaryCta: "See case studies",
+        "We design and build iOS and Android apps, desktop software, and digital products with a product mindset: from discovery to launch on the app stores.",
+      primaryCta: "Request a proposal",
+      secondaryCta: "See published apps",
       metrics: [
-        { value: "5+", label: "Apps published" },
+        { value: "5+", label: "Free apps published in the public domain" },
         { value: "5", label: "Platforms (iOS, Android, Windows, macOS, Linux)" },
-        { value: "100%", label: "Cross-platform focus" },
+        { value: "48 h", label: "To your technical proposal" },
       ],
     },
     services: {
       title: "Services",
-      description: "Cross-functional teams solving product, technology, and scale challenges.",
+      description: "Cross-platform app and software development, from idea to launch.",
       items: [
         {
-          title: "Product Discovery",
-          text: "We validate scope, technical risk, and business value before building.",
+          title: "iOS and Android mobile apps",
+          text: "Flutter apps from a single codebase, or native Swift and Kotlin when the product demands it. Includes a Firebase backend and app store publishing.",
         },
         {
-          title: "Full Stack Engineering",
-          text: "Modern architectures for web, mobile, and backend with maintainability in mind.",
+          title: "Cross-platform desktop software",
+          text: "macOS, Windows, and Linux applications with C++ and Qt: native performance, one codebase, and distribution ready for your users.",
         },
         {
-          title: "Modernization and Scale",
-          text: "We refactor existing platforms to improve speed, reliability, and cost efficiency.",
+          title: "Product and modernization",
+          text: "We validate scope and technical risk before building, and refactor existing apps for more speed, stability, and lower maintenance costs.",
         },
       ],
     },
     portfolio: {
       title: "Featured cases",
+      heading: "Apps and projects already in production",
       note: "We showcase our public solutions. Projects built for clients under a confidentiality agreement are not listed here.",
       items: [
         {
           name: "BuMa",
           tag: "Business management",
+          category: "BusinessApplication",
           impact: "Complete inventory, sales, and finance control in a single app for small businesses.",
           links: [
             { url: "https://play.google.com/store/apps/details?id=com.santech.buma", label: "View on Google Play" },
@@ -221,8 +265,9 @@ export const content = {
           ],
         },
         {
-          name: "Simon",
+          name: "Simon in Space",
           tag: "Entertainment",
+          category: "GameApplication",
           impact: "Arcade-style memory game with a polished mobile experience.",
           links: [
             { url: "https://simon-in-space-game.github.io/", label: "Play now" },
@@ -232,6 +277,7 @@ export const content = {
         {
           name: "Apple2Google Maps",
           tag: "Utilities",
+          category: "UtilitiesApplication",
           impact: "Converts Apple Maps links to Google Maps and Waze, solving cross-platform compatibility issues.",
           links: [
             { url: "https://a2gmapc.github.io/", label: "Project site" },
@@ -242,12 +288,14 @@ export const content = {
         {
           name: "BigFolderWidget",
           tag: "Utilities",
+          category: "UtilitiesApplication",
           impact: "Folder widget for organizing apps and shortcuts from the iOS home screen.",
           links: [{ url: "https://big-icon-folder-widget.github.io/", label: "Visit site" }],
         },
         {
           name: "PsiphonQt",
           tag: "Open Source",
+          category: "DesktopEnhancementApplication",
           impact: "Cross-platform desktop client for Psiphon built with Qt, available on macOS, Linux, and Windows.",
           links: [{ url: "https://github.com/santech-inc/PsiphonQt", label: "View code on GitHub" }],
         },
@@ -255,6 +303,7 @@ export const content = {
     },
     process: {
       title: "How we work",
+      heading: "A clear process, from discovery to launch",
       steps: [
         { title: "Discovery", text: "We map goals, constraints, and success metrics." },
         { title: "Solution design", text: "We define architecture, roadmap, and prioritized backlog." },
@@ -264,21 +313,12 @@ export const content = {
     },
     technology: {
       title: "Stack and capabilities",
-      tags: [
-        "Flutter",
-        "Dart",
-        "Swift",
-        "Kotlin",
-        "C++",
-        "Qt",
-        "Firebase",
-        "iOS",
-        "Android",
-        "macOS",
-      ],
+      heading: "Native and cross-platform technology",
+      tags: ["Flutter", "Dart", "Swift", "Kotlin", "C++", "Qt", "Firebase", "iOS", "Android", "macOS"],
     },
     testimonials: {
       title: "What our clients say",
+      heading: "Results our clients notice",
       items: [
         {
           quote:
@@ -286,29 +326,77 @@ export const content = {
           author: "Local business owner",
         },
         {
-          quote:
-            "The app was stable, fast, and got great feedback from users right from launch.",
+          quote: "The app was stable, fast, and got great feedback from users right from launch.",
           author: "Independent client",
+        },
+      ],
+    },
+    faq: {
+      title: "FAQ",
+      heading: "What clients ask before we start",
+      items: [
+        {
+          q: "Do you build apps for both iOS and Android?",
+          a: "Yes. We use Flutter to ship on iOS and Android from a single codebase, and Swift or Kotlin when the project needs deep native integration.",
+        },
+        {
+          q: "Flutter or native development: which is right for my project?",
+          a: "Flutter cuts time and cost when you need both platforms with the same experience. Native development fits features tightly bound to the OS, such as widgets or extensions. We decide together during discovery.",
+        },
+        {
+          q: "How much does an app cost and how long does it take?",
+          a: "It depends on scope, integrations, and platforms. After discovery you get a technical proposal with scope, timeline, and cost in under 48 hours.",
+        },
+        {
+          q: "Do you also build desktop software?",
+          a: "Yes. We build macOS, Windows, and Linux applications with C++ and Qt, like our open source client PsiphonQt.",
+        },
+        {
+          q: "Will you help me publish the app on Google Play and the App Store?",
+          a: "Yes. We prepare the store listing, graphic assets, and submission, and support you through each store's review.",
+        },
+        {
+          q: "Do you sign confidentiality agreements (NDA)?",
+          a: "Yes. Many of our projects are built under NDA, which is why not all of them appear in our public portfolio.",
+        },
+        {
+          q: "Do you offer maintenance after launch?",
+          a: "Yes. We measure impact, fix issues, update dependencies, and evolve the product in short iterations.",
         },
       ],
     },
     downloads: {
       title: "Downloads",
-      description: "Check out our published work on the app stores.",
+      description: "Try our published apps on Google Play.",
       android: "Developer profile on Google Play",
       androidUrl: "https://play.google.com/store/apps/dev?id=7795062710980776466",
     },
     contact: {
       eyebrow: "Contact",
-      title: "Let us turn your next idea into a robust product",
-      description: "Tell us your challenge and get a technical proposal in under 48 hours.",
+      title: "Let us turn your next idea into a solid app",
+      description: "Tell us your challenge and get a technical proposal in under 48 hours, no strings attached.",
       button: "Contact SanTech",
+      subject: "Proposal for my project",
       email: "sanincdev@gmail.com",
     },
     footer: {
-      copy: "SanTech Inc. Software development focused on outcomes.",
+      copy: "SanTech Inc. Mobile app and custom software development.",
       rights: "All rights reserved.",
       repoLink: { label: "Apps repo", href: "/repo/" },
     },
+    notFound: {
+      title: "Page not found",
+      text: "The page you are looking for does not exist or has moved.",
+      cta: "Back to home",
+    },
   },
+};
+
+export const site = {
+  url: "https://santech-inc.github.io",
+  paths: { es: "/", en: "/en/" },
+  sameAs: [
+    "https://github.com/santech-inc",
+    "https://play.google.com/store/apps/dev?id=7795062710980776466",
+  ],
 };

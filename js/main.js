@@ -7,6 +7,7 @@ import { renderProcess } from "./components/process.js";
 import { renderTechnology } from "./components/technology.js";
 import { renderTestimonials } from "./components/testimonials.js";
 import { renderDownloads } from "./components/downloads.js";
+import { renderFaq } from "./components/faq.js";
 import { renderContact } from "./components/contact.js";
 import { renderFooter } from "./components/footer.js";
 
@@ -21,6 +22,7 @@ const ids = {
   technology: document.getElementById("technology"),
   testimonials: document.getElementById("testimonials"),
   downloads: document.getElementById("downloads"),
+  faq: document.getElementById("faq"),
   contact: document.getElementById("contact"),
   footer: document.getElementById("site-footer"),
   metaDescription: document.getElementById("meta-description"),
@@ -36,6 +38,7 @@ const sectionRenderers = [
   ["technology", renderTechnology],
   ["testimonials", renderTestimonials],
   ["downloads", renderDownloads],
+  ["faq", renderFaq],
   ["contact", renderContact],
   ["footer", renderFooter],
 ];
@@ -44,6 +47,7 @@ const locales = Object.keys(content);
 const defaultLocale = locales.includes("es") ? "es" : locales[0];
 const localeKey = "santech-locale";
 let revealObserver = null;
+const prerenderedLocale = document.documentElement.dataset.renderedLocale;
 
 function getLocale() {
   let savedLocale = null;
@@ -87,14 +91,21 @@ function bindHeader(locale) {
     return;
   }
 
-  header.querySelectorAll(".lang-button").forEach((button) => {
-    button.addEventListener("click", () => {
-      const nextLocale = button.dataset.locale;
-      if (!nextLocale || !content[nextLocale] || nextLocale === locale) {
+  header.querySelectorAll(".lang-button").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const nextLocale = link.dataset.locale;
+      if (!nextLocale || !content[nextLocale]) {
         return;
       }
       persistLocale(nextLocale);
-      render(nextLocale);
+      // Built pages: follow the real per-locale URL. Unbuilt dev shell: swap in place.
+      if (prerenderedLocale) {
+        return;
+      }
+      event.preventDefault();
+      if (nextLocale !== locale) {
+        render(nextLocale);
+      }
     });
   });
 
@@ -168,17 +179,14 @@ function render(locale) {
   bindReveals();
 }
 
-const initialLocale = getLocale();
-const prerenderedLocale = document.documentElement.dataset.renderedLocale;
-
-if (prerenderedLocale === initialLocale) {
-  // Static build already emitted this locale's markup — just wire up behavior
-  // and skip the full re-render (avoids re-running the reveal animations).
-  syncMeta(content[initialLocale], initialLocale);
-  bindHeader(initialLocale);
+if (prerenderedLocale && content[prerenderedLocale]) {
+  // Built page: the URL (/ or /en/) defines the language, so the markup is
+  // already correct — only wire up behavior.
+  syncMeta(content[prerenderedLocale], prerenderedLocale);
+  bindHeader(prerenderedLocale);
   bindReveals();
 } else {
-  render(initialLocale);
+  render(getLocale());
 }
 
 bindGlobal();
