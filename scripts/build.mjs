@@ -7,6 +7,7 @@
 // robots.txt, 404.html and site.webmanifest.
 
 import { readFile, writeFile, mkdir, rm, cp } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -31,6 +32,9 @@ const LOGO_URL = `${SITE_URL}/assets/icons/icon-512.png`;
 const ogImage = (locale) => `${SITE_URL}/assets/og-${locale}.png`;
 const CSS_FILES = ["variables", "base", "background", "sections", "header", "animations"];
 const BUNDLE_PATH = "css/site.css";
+// Content hash appended to the CSS URL so a deploy never pairs new HTML with a
+// stale cached stylesheet (GitHub Pages caches assets for 10 minutes).
+let cssVersion = "";
 
 // locale -> output file inside dist/ and folder depth (for relative assets)
 const targets = {
@@ -210,7 +214,7 @@ function applyCommonHead(html, locale, depth) {
   html = replaceOrThrow(
     html,
     /<!-- build:css -->[\s\S]*?<!-- endbuild:css -->/,
-    `<link rel="stylesheet" href="./${BUNDLE_PATH}" />`
+    `<link rel="stylesheet" href="./${BUNDLE_PATH}?v=${cssVersion}" />`
   );
   html = replaceOrThrow(html, "<title>SanTech Inc</title>", `<title>${escapeXml(data.meta.title)}</title>`);
   html = replaceOrThrow(
@@ -366,7 +370,9 @@ async function main() {
     filter: (src) => !src.endsWith(".DS_Store"),
   });
   await mkdir(resolve(distDir, "css"), { recursive: true });
-  await writeFile(resolve(distDir, BUNDLE_PATH), await bundleCss(), "utf8");
+  const css = await bundleCss();
+  cssVersion = createHash("sha256").update(css).digest("hex").slice(0, 10);
+  await writeFile(resolve(distDir, BUNDLE_PATH), css, "utf8");
 
   for (const [locale, target] of Object.entries(targets)) {
     const outPath = resolve(distDir, target.outFile);
