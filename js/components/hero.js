@@ -4,10 +4,22 @@ export function renderHero(data) {
   const metrics = data.hero.metrics
     .map(
       (m) => `
-        <article class="metric panel">
-          <h3>${escapeHtml(m.value)}</h3>
-          <p>${escapeHtml(m.label)}</p>
-        </article>
+        <div class="metric">
+          <strong>${escapeHtml(m.value)}</strong>
+          <span>${escapeHtml(m.label)}</span>
+        </div>
+      `
+    )
+    .join("");
+
+  const signalNodes = data.hero.metrics
+    .slice(0, 3)
+    .map(
+      (m, index) => `
+        <span class="signal-node signal-node-${String.fromCharCode(97 + index)}">
+          <strong>${escapeHtml(m.value)}</strong>
+          <small>${escapeHtml(m.label)}</small>
+        </span>
       `
     )
     .join("");
@@ -23,8 +35,17 @@ export function renderHero(data) {
           <a class="button button-secondary" href="#portfolio">${escapeHtml(data.hero.secondaryCta)}</a>
         </div>
       </div>
-      <aside class="hero-metrics grid reveal reveal-delay-2">
-        ${metrics}
+      <aside class="hero-visual reveal reveal-delay-2">
+        <div class="hero-visual-stage" aria-hidden="true">
+          <div class="hero-visual-grid"></div>
+          <div class="signal-orbit signal-orbit-a"></div>
+          <div class="signal-orbit signal-orbit-b"></div>
+          <div class="signal-core">ST</div>
+          ${signalNodes}
+        </div>
+        <div class="hero-metrics">
+          ${metrics}
+        </div>
       </aside>
     </div>
   `;

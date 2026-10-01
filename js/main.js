@@ -10,6 +10,8 @@ import { renderDownloads } from "./components/downloads.js";
 import { renderContact } from "./components/contact.js";
 import { renderFooter } from "./components/footer.js";
 
+document.documentElement.classList.add("js");
+
 const ids = {
   header: document.getElementById("site-header"),
   hero: document.getElementById("hero"),
@@ -41,6 +43,7 @@ const sectionRenderers = [
 const locales = Object.keys(content);
 const defaultLocale = locales.includes("es") ? "es" : locales[0];
 const localeKey = "santech-locale";
+let revealObserver = null;
 
 function getLocale() {
   let savedLocale = null;
@@ -112,6 +115,34 @@ function bindHeader(locale) {
   });
 }
 
+function bindReveals() {
+  revealObserver?.disconnect();
+
+  const elements = document.querySelectorAll(".reveal");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    elements.forEach((element) => element.classList.add("is-visible"));
+    return;
+  }
+
+  revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
+  );
+
+  elements.forEach((element) => revealObserver.observe(element));
+}
+
 function bindGlobal() {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
@@ -134,6 +165,7 @@ function render(locale) {
 
   syncMeta(data, locale);
   bindHeader(locale);
+  bindReveals();
 }
 
 const initialLocale = getLocale();
@@ -144,6 +176,7 @@ if (prerenderedLocale === initialLocale) {
   // and skip the full re-render (avoids re-running the reveal animations).
   syncMeta(content[initialLocale], initialLocale);
   bindHeader(initialLocale);
+  bindReveals();
 } else {
   render(initialLocale);
 }

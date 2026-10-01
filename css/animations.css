@@ -1,25 +1,96 @@
-@keyframes rise {
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity var(--motion-slow) var(--ease-out),
+    transform var(--motion-slow) var(--ease-out);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 90ms;
+}
+
+.reveal-delay-2 {
+  transition-delay: 170ms;
+}
+
+.reveal-delay-3 {
+  transition-delay: 250ms;
+}
+
+@keyframes signal-spin {
   from {
-    opacity: 0;
-    transform: translateY(20px);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
 
   to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes signal-spin-reverse {
+  from {
+    transform: translate(-50%, -50%) rotate(56deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-304deg);
+  }
+}
+
+@keyframes signal-pulse {
+  0%,
+  100% {
+    transform: scale(0.92);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: scale(1.08);
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .reveal {
-    animation: rise 0.6s ease both;
+  .signal-orbit-a {
+    animation: signal-spin 22s linear infinite;
   }
 
-  .reveal-delay-1 {
-    animation-delay: 0.12s;
+  .signal-orbit-b {
+    animation: signal-spin-reverse 16s linear infinite;
   }
 
-  .reveal-delay-2 {
-    animation-delay: 0.2s;
+  .signal-core::after {
+    animation: signal-pulse 3.2s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .button,
+  .case-card,
+  .service-card,
+  .process-step,
+  .tech-tag {
+    transition: none;
   }
 }

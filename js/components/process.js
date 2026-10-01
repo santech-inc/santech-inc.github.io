@@ -16,7 +16,7 @@ export function renderProcess(data) {
   return `
     <div class="container">
       <span class="eyebrow">${escapeHtml(data.process.title)}</span>
-      <div class="grid cards-4">
+      <div class="process-track">
         ${items}
       </div>
     </div>
