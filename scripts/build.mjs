@@ -294,6 +294,8 @@ function buildSitemap() {
       (code) => `  <url>
     <loc>${pageUrl(code)}</loc>
     <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>${code === "es" ? "1.0" : "0.9"}</priority>
 ${alternates}
   </url>`
     )
