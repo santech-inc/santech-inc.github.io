@@ -17,6 +17,7 @@ export const content = {
       { label: "Casos", href: "#portfolio" },
       { label: "Proceso", href: "#process" },
       { label: "Tecnología", href: "#technology" },
+      { label: "Repo", href: "/repo/" },
       { label: "Contacto", href: "#contact" },
     ],
     hero: {
@@ -151,6 +152,7 @@ export const content = {
     footer: {
       copy: "SanTech Inc. Desarrollo de software orientado a resultados.",
       rights: "Todos los derechos reservados.",
+      repoLink: { label: "Repositorio de apps", href: "/repo/" },
     },
   },
   en: {
@@ -171,6 +173,7 @@ export const content = {
       { label: "Cases", href: "#portfolio" },
       { label: "Process", href: "#process" },
       { label: "Technology", href: "#technology" },
+      { label: "Repo", href: "/repo/" },
       { label: "Contact", href: "#contact" },
     ],
     hero: {
@@ -305,6 +308,7 @@ export const content = {
     footer: {
       copy: "SanTech Inc. Software development focused on outcomes.",
       rights: "All rights reserved.",
+      repoLink: { label: "Apps repo", href: "/repo/" },
     },
   },
 };
