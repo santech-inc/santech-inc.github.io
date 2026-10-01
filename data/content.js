@@ -3,7 +3,7 @@ export const content = {
     meta: {
       title: "Desarrollo de Apps Móviles y Software a Medida | SanTech Inc",
       description:
-        "Desarrollamos apps iOS y Android con Flutter, Swift y Kotlin, y software de escritorio multiplataforma. Recibe una propuesta técnica en menos de 48 horas.",
+        "Más de 50 clientes confían en nosotros: apps iOS y Android con Flutter, Swift y Kotlin, y software de escritorio. Propuesta técnica en menos de 48 horas.",
       ogLocale: "es_ES",
       siteName: "SanTech Inc",
     },
@@ -30,9 +30,9 @@ export const content = {
       primaryCta: "Solicitar propuesta",
       secondaryCta: "Ver apps publicadas",
       metrics: [
-        { value: "5+", label: "Apps gratis publicadas en dominio público" },
+        { value: "50+", label: "Clientes con apps desarrolladas por SanTech" },
+        { value: "5+", label: "Apps propias gratuitas y de acceso público" },
         { value: "5", label: "Plataformas (iOS, Android, Windows, macOS, Linux)" },
-        { value: "48 h", label: "Para tu propuesta técnica" },
       ],
     },
     services: {
@@ -55,8 +55,8 @@ export const content = {
     },
     portfolio: {
       title: "Casos destacados",
-      heading: "Apps y proyectos que ya están en producción",
-      note: "Mostramos nuestras soluciones públicas. Los proyectos desarrollados para clientes bajo acuerdo de confidencialidad no se listan aquí.",
+      heading: "Nuestras apps públicas, ya en producción",
+      note: "Estas son nuestras apps propias, gratuitas y de acceso público. Las apps de más de 50 clientes se desarrollan bajo acuerdo de confidencialidad y no se listan aquí.",
       items: [
         {
           name: "BuMa",
@@ -162,7 +162,7 @@ export const content = {
         },
         {
           q: "¿Firman acuerdos de confidencialidad (NDA)?",
-          a: "Sí. Muchos de nuestros proyectos se desarrollan bajo NDA; por eso no todos aparecen en el portafolio público.",
+          a: "Sí. Hemos desarrollado apps para más de 50 clientes, la mayoría bajo NDA; por eso el portafolio público muestra solo nuestras apps propias.",
         },
         {
           q: "¿Ofrecen mantenimiento después del lanzamiento?",
@@ -199,7 +199,7 @@ export const content = {
     meta: {
       title: "Mobile App & Custom Software Development | SanTech Inc",
       description:
-        "We build iOS and Android apps with Flutter, Swift and Kotlin, plus cross-platform desktop software. Get a technical proposal in under 48 hours.",
+        "Trusted by 50+ clients: iOS and Android apps with Flutter, Swift and Kotlin, plus desktop software. Get a technical proposal in under 48 hours.",
       ogLocale: "en_US",
       siteName: "SanTech Inc",
     },
@@ -226,9 +226,9 @@ export const content = {
       primaryCta: "Request a proposal",
       secondaryCta: "See published apps",
       metrics: [
-        { value: "5+", label: "Free apps published in the public domain" },
+        { value: "50+", label: "Clients with apps built by SanTech" },
+        { value: "5+", label: "Free, publicly available apps of our own" },
         { value: "5", label: "Platforms (iOS, Android, Windows, macOS, Linux)" },
-        { value: "48 h", label: "To your technical proposal" },
       ],
     },
     services: {
@@ -251,8 +251,8 @@ export const content = {
     },
     portfolio: {
       title: "Featured cases",
-      heading: "Apps and projects already in production",
-      note: "We showcase our public solutions. Projects built for clients under a confidentiality agreement are not listed here.",
+      heading: "Our public apps, already in production",
+      note: "These are our own free, publicly available apps. Apps for our 50+ clients are built under confidentiality agreements and are not listed here.",
       items: [
         {
           name: "BuMa",
@@ -357,7 +357,7 @@ export const content = {
         },
         {
           q: "Do you sign confidentiality agreements (NDA)?",
-          a: "Yes. Many of our projects are built under NDA, which is why not all of them appear in our public portfolio.",
+          a: "Yes. We have built apps for 50+ clients, most of them under NDA, which is why our public portfolio only shows our own apps.",
         },
         {
           q: "Do you offer maintenance after launch?",
