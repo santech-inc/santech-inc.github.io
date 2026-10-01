@@ -2,26 +2,35 @@
   --font-display: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
   --font-body: "Sora", "Segoe UI", sans-serif;
 
-  --color-bg: #f4f8ff;
-  --color-surface: #ffffff;
-  --color-ink: #0c1738;
-  --color-muted: #4f5b80;
+  --color-bg: #eef3f8;
+  --color-surface: #f8fbff;
+  --color-surface-strong: #ffffff;
+  --color-ink: #0b1220;
+  --color-muted: #58677e;
   --color-primary: #1a8dde;
   --color-secondary: #3559e6;
   --color-accent: #6f5de5;
   --color-cyan: #03bedf;
-  --color-line: rgba(33, 57, 120, 0.16);
+  --color-line: rgba(31, 57, 100, 0.14);
+
+  --color-hero: #091126;
+  --color-hero-soft: #111e43;
+  --color-on-dark: #f4f8ff;
+  --color-dark-muted: #a7b8d5;
+  --color-dark-line: rgba(164, 191, 235, 0.18);
 
   --gradient-brand: linear-gradient(135deg, #00bddf 0%, #2d80e4 50%, #6f5de5 100%);
-  --gradient-soft: linear-gradient(135deg, rgba(3, 190, 223, 0.14) 0%, rgba(111, 93, 229, 0.14) 100%);
-  --gradient-deep: linear-gradient(155deg, #0d1946 0%, #1f2f85 45%, #5c48d2 100%);
+  --gradient-soft: linear-gradient(135deg, rgba(3, 190, 223, 0.12) 0%, rgba(111, 93, 229, 0.12) 100%);
+  --gradient-deep: linear-gradient(145deg, #091126 0%, #1b2c6b 58%, #5545bd 100%);
 
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
 
-  --shadow-soft: 0 16px 40px rgba(31, 53, 120, 0.1);
-  --shadow-strong: 0 20px 60px rgba(20, 38, 98, 0.22);
+  --shadow-soft: 0 18px 48px rgba(31, 53, 120, 0.08);
+  --shadow-lift: 0 22px 44px rgba(31, 53, 120, 0.15);
+  --shadow-strong: 0 24px 70px rgba(4, 12, 38, 0.3);
+  --glow-cyan: 0 0 44px rgba(3, 190, 223, 0.25);
 
   --space-2xs: 0.25rem;
   --space-xs: 0.5rem;
@@ -32,5 +41,10 @@
   --space-2xl: 3rem;
   --space-3xl: 5rem;
 
-  --container: 1160px;
+  --motion-fast: 180ms;
+  --motion-base: 320ms;
+  --motion-slow: 650ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --container: 1180px;
 }
