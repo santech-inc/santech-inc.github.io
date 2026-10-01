@@ -7,6 +7,7 @@ Landing one-page bilingue (ES/EN) implementada con HTML, CSS y JavaScript estati
 - index.html: shell semantico, puntos de montaje y plantilla del build.
 - css/: tokens, base, fondo, header y estilos por seccion.
 - data/content.js: fuente unica de contenido ES/EN.
+- public/: archivos que se copian tal cual a la raiz del sitio (p. ej. verificacion de Google Search Console). No pongas aqui `sitemap.xml` ni `robots.txt`: los genera el build.
 - js/components/: renderizadores modulares por seccion.
 - js/utils/escape.js: escape de HTML para interpolar contenido de forma segura.
 - js/main.js: orquestacion, i18n, hidratacion y metadata dinamica.

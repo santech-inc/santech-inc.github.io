@@ -358,6 +358,12 @@ async function main() {
       filter: (src) => !src.endsWith(".DS_Store"),
     });
   }
+  // public/: files served verbatim at the site root (e.g. Google Search
+  // Console verification). Generated files below take precedence.
+  await cp(resolve(root, "public"), distDir, {
+    recursive: true,
+    filter: (src) => !src.endsWith(".DS_Store"),
+  });
   await mkdir(resolve(distDir, "css"), { recursive: true });
   await writeFile(resolve(distDir, BUNDLE_PATH), await bundleCss(), "utf8");
 
