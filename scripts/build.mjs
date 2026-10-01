@@ -27,7 +27,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const distDir = resolve(root, "dist");
 
 const SITE_URL = site.url;
-const LOGO_URL = `${SITE_URL}/assets/brand.svg`;
+const LOGO_URL = `${SITE_URL}/assets/icons/icon-512.png`;
 const ogImage = (locale) => `${SITE_URL}/assets/og-${locale}.png`;
 const CSS_FILES = ["variables", "base", "background", "sections", "header", "animations"];
 const BUNDLE_PATH = "css/site.css";
@@ -327,7 +327,6 @@ const manifest = () =>
       icons: [
         { src: "/assets/icons/icon-192.png", sizes: "192x192", type: "image/png" },
         { src: "/assets/icons/icon-512.png", sizes: "512x512", type: "image/png" },
-        { src: "/assets/brand.svg", sizes: "any", type: "image/svg+xml" },
       ],
     },
     null,

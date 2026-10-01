@@ -10,7 +10,10 @@ export function renderFooter(data) {
 
   return `
     <div class="container footer-inner">
-      <p>${escapeHtml(data.footer.copy)}</p>
+      <div class="footer-brand">
+        <img src="./assets/logo-96.webp" width="40" height="40" alt="SanTech Inc" loading="lazy" decoding="async" />
+        <p>${escapeHtml(data.footer.copy)}</p>
+      </div>
       ${repoLink}
       <p>© ${year} ${escapeHtml(data.footer.rights)}</p>
     </div>

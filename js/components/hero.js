@@ -40,7 +40,7 @@ export function renderHero(data) {
           <div class="hero-visual-grid"></div>
           <div class="signal-orbit signal-orbit-a"></div>
           <div class="signal-orbit signal-orbit-b"></div>
-          <div class="signal-core">ST</div>
+          <div class="signal-core"><img src="./assets/logo-256.webp" width="256" height="256" alt="" decoding="async" /></div>
           ${signalNodes}
         </div>
         <div class="hero-metrics">
