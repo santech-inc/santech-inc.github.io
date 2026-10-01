@@ -7,7 +7,10 @@ export function renderTechnology(data) {
 
   return `
     <div class="container panel tech-panel reveal">
-      <span class="eyebrow">${escapeHtml(data.technology.title)}</span>
+      <div>
+        <span class="eyebrow">${escapeHtml(data.technology.title)}</span>
+        <h2>${escapeHtml(data.technology.heading)}</h2>
+      </div>
       <ul class="tech-tags">${tags}</ul>
     </div>
   `;

@@ -1,3 +1,4 @@
+import { site } from "../../data/content.js";
 import { escapeHtml } from "../utils/escape.js";
 
 const BRAND_MARK = `
@@ -26,10 +27,18 @@ export function renderHeader(data, locale) {
     .join("");
 
   const a11y = data.a11y;
+  const langLinks = Object.entries(site.paths)
+    .map(
+      ([code, path]) =>
+        `<a class="lang-button ${code === locale ? "is-active" : ""}" href="${escapeHtml(path)}" hreflang="${code}" lang="${code}" data-locale="${code}"${
+          code === locale ? ' aria-current="true"' : ""
+        }>${code.toUpperCase()}</a>`
+    )
+    .join("");
 
   return `
     <div class="container header-inner reveal">
-      <a href="#hero" class="brand" aria-label="SanTech home">
+      <a href="#hero" class="brand" aria-label="${escapeHtml(a11y.homeLabel)}">
         <span class="brand-symbol">${BRAND_MARK}</span>
         <span class="brand-text">SanTech Inc</span>
       </a>
@@ -48,12 +57,7 @@ export function renderHeader(data, locale) {
         ${navItems}
       </nav>
       <div class="lang-switch" role="group" aria-label="${escapeHtml(a11y.langSwitchLabel)}">
-        <button class="lang-button ${locale === "es" ? "is-active" : ""}" data-locale="es" aria-pressed="${
-          locale === "es"
-        }">ES</button>
-        <button class="lang-button ${locale === "en" ? "is-active" : ""}" data-locale="en" aria-pressed="${
-          locale === "en"
-        }">EN</button>
+        ${langLinks}
       </div>
     </div>
   `;

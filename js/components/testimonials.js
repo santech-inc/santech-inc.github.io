@@ -15,6 +15,7 @@ export function renderTestimonials(data) {
   return `
     <div class="container">
       <span class="eyebrow">${escapeHtml(data.testimonials.title)}</span>
+      <h2>${escapeHtml(data.testimonials.heading)}</h2>
       <div class="grid cards-2">
         ${items}
       </div>

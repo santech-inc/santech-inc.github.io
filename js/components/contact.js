@@ -11,7 +11,7 @@ export function renderContact(data) {
         <p>${escapeHtml(contact.description)}</p>
       </div>
       <div class="contact-actions">
-        <a class="button button-primary" href="mailto:${escapeHtml(contact.email)}">${escapeHtml(contact.button)}</a>
+        <a class="button button-primary" href="mailto:${escapeHtml(contact.email)}?subject=${escapeHtml(encodeURIComponent(contact.subject))}">${escapeHtml(contact.button)}</a>
       </div>
     </div>
   `;

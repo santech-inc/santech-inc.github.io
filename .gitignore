@@ -5,8 +5,8 @@
 # OS files
 .DS_Store
 **/.DS_Store
-Icon?
-**/Icon?
+Icon
+**/Icon
 
 # Build output
 dist/
