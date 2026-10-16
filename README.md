@@ -47,3 +47,7 @@ El idioma se controla con botones ES/EN en header y se persiste en localStorage 
 - Despliega el contenido de `dist/`. Ajusta `SITE_URL` en `scripts/build.mjs` al dominio real.
 - Tarjetas Open Graph: `npm run og` regenera `assets/og-es.png` / `assets/og-en.png`
   (1200x630) desde `scripts/og.mjs`; requiere ImageMagick. Commitea los PNG resultantes.
+- Collages de productos: `npm run products` regenera `assets/products/<slug>.{webp,jpg}`
+  (1200x750, hasta 3 capturas por producto) desde `scripts/products.mjs`; requiere Chrome
+  (headless) e ImageMagick. Los artboards de myTracker salen del proyecto hermano
+  (`MYTRACKER_DESIGN` para otra ruta). Commitea los archivos resultantes.

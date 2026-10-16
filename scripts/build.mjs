@@ -87,17 +87,29 @@ function structuredData(locale) {
   const url = pageUrl(locale);
   const orgId = `${SITE_URL}/#organization`;
 
-  const apps = data.portfolio.items.map((item) => ({
-    "@type": item.category === "DesktopEnhancementApplication" ? "SoftwareApplication" : "MobileApplication",
-    name: item.name,
-    applicationCategory: item.category,
-    description: item.impact,
-    url: item.links[0]?.url,
-    isAccessibleForFree: true,
-    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    sameAs: item.links.slice(1).map((link) => link.url),
-    creator: { "@id": orgId },
-  }));
+  const apps = data.portfolio.items.map((item) => {
+    const type =
+      item.schemaType ||
+      (item.category === "DesktopEnhancementApplication" ? "SoftwareApplication" : "MobileApplication");
+    const app = {
+      "@type": type,
+      name: item.name,
+      applicationCategory: item.category,
+      description: item.impact,
+      url: item.links[0]?.url,
+      isAccessibleForFree: true,
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      sameAs: item.links.slice(1).map((link) => link.url),
+      creator: { "@id": orgId },
+    };
+    if (item.operatingSystem) {
+      app.operatingSystem = item.operatingSystem;
+    }
+    if (item.image) {
+      app.image = `${SITE_URL}/${item.image.replace(/^\.\//, "")}`;
+    }
+    return app;
+  });
 
   return {
     "@context": "https://schema.org",
@@ -240,7 +252,7 @@ function applyCommonHead(html, locale, depth) {
 
   if (depth > 0) {
     const prefix = "../".repeat(depth);
-    html = html.replace(/(src|href)="\.\//g, `$1="${prefix}`);
+    html = html.replace(/(src|href|srcset)="\.\//g, `$1="${prefix}`);
   }
   return html;
 }

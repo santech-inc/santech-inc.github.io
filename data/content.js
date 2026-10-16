@@ -31,7 +31,7 @@ export const content = {
       secondaryCta: "Ver apps publicadas",
       metrics: [
         { value: "50+", label: "Clientes con apps desarrolladas por SanTech" },
-        { value: "5+", label: "Apps propias gratuitas y de acceso público" },
+        { value: "7+", label: "Apps propias gratuitas y de acceso público" },
         { value: "5", label: "Plataformas (iOS, Android, Windows, macOS, Linux)" },
       ],
     },
@@ -59,10 +59,42 @@ export const content = {
       note: "Estas son nuestras apps propias, gratuitas y de acceso público. Las apps de más de 50 clientes se desarrollan bajo acuerdo de confidencialidad y no se listan aquí.",
       items: [
         {
+          name: "A la mesa",
+          tag: "Restaurantes · QR",
+          category: "BusinessApplication",
+          schemaType: "SoftwareApplication",
+          operatingSystem: "Web",
+          impact:
+            "Carta digital y pedidos desde la mesa con un código QR: el cliente pide desde el móvil y la cocina sigue cada pedido en tiempo real.",
+          image: "./assets/products/a-la-mesa.jpg",
+          imageWebp: "./assets/products/a-la-mesa.webp",
+          imageAlt: "Carta digital y pantalla de pedidos de A la mesa en el móvil",
+          links: [
+            { url: "https://www.alamesa.menu/", label: "Sitio del producto" },
+            { url: "https://www.alamesa.menu/hammilton", label: "Ver demo en vivo" },
+          ],
+        },
+        {
+          name: "myTracker",
+          tag: "Localización GPS",
+          category: "NavigationApplication",
+          schemaType: "SoftwareApplication",
+          operatingSystem: "Web, Android e iOS",
+          impact:
+            "Localizador GPS con ESP32 (LTE + GNSS): mapa en vivo, histórico de recorridos, comandos por SMS y app para web, Android e iOS.",
+          image: "./assets/products/mytracker.jpg",
+          imageWebp: "./assets/products/mytracker.webp",
+          imageAlt: "Panel de myTracker con mapa en vivo, dispositivos e histórico de recorridos",
+          links: [{ url: "https://mytracker.app", label: "Sitio del producto" }],
+        },
+        {
           name: "BuMa",
           tag: "Gestión de negocio",
           category: "BusinessApplication",
           impact: "Control integral de inventario, ventas y finanzas en una sola app para pymes.",
+          image: "./assets/products/buma.jpg",
+          imageWebp: "./assets/products/buma.webp",
+          imageAlt: "Pantallas de la app BuMa: inventario, transacciones y alta de negocio",
           links: [
             { url: "https://play.google.com/store/apps/details?id=com.santech.buma", label: "Ver en Google Play" },
             { url: "https://buma-santech.github.io/", label: "Sitio del proyecto" },
@@ -73,6 +105,9 @@ export const content = {
           tag: "Entretenimiento",
           category: "GameApplication",
           impact: "Juego de memoria estilo arcade con experiencia móvil pulida.",
+          image: "./assets/products/simon-in-space.jpg",
+          imageWebp: "./assets/products/simon-in-space.webp",
+          imageAlt: "Pantallas del juego Simon in Space",
           links: [
             { url: "https://simon-in-space-game.github.io/", label: "Jugar ahora" },
             { url: "https://play.google.com/store/apps/details?id=com.santech.simon_in_space", label: "Ver en Google Play" },
@@ -83,6 +118,9 @@ export const content = {
           tag: "Utilidades",
           category: "UtilitiesApplication",
           impact: "Convierte enlaces de Apple Maps a Google Maps y Waze, resolviendo la incompatibilidad entre plataformas.",
+          image: "./assets/products/apple2google-maps.jpg",
+          imageWebp: "./assets/products/apple2google-maps.webp",
+          imageAlt: "Pantallas de la app Apple2Google Maps",
           links: [
             { url: "https://a2gmapc.github.io/", label: "Sitio del proyecto" },
             { url: "https://play.google.com/store/apps/details?id=org.santech.apple2googlemaps", label: "Apple2Google en Play" },
@@ -94,6 +132,9 @@ export const content = {
           tag: "Utilidades",
           category: "UtilitiesApplication",
           impact: "Widget de carpetas para organizar apps y accesos directos desde la pantalla de inicio en iOS.",
+          image: "./assets/products/bigfolderwidget.jpg",
+          imageWebp: "./assets/products/bigfolderwidget.webp",
+          imageAlt: "Pantallas del widget AppFolderWidget en iOS",
           links: [{ url: "https://big-icon-folder-widget.github.io/", label: "Sitio del proyecto" }],
         },
         {
@@ -101,6 +142,9 @@ export const content = {
           tag: "Open Source",
           category: "DesktopEnhancementApplication",
           impact: "Cliente de escritorio multiplataforma para Psiphon construido con Qt, disponible en macOS, Linux y Windows.",
+          image: "./assets/products/psiphonqt.jpg",
+          imageWebp: "./assets/products/psiphonqt.webp",
+          imageAlt: "Capturas de PsiphonQt en macOS, Windows y Linux",
           links: [{ url: "https://github.com/santech-inc/PsiphonQt", label: "Ver código en GitHub" }],
         },
       ],
@@ -227,7 +271,7 @@ export const content = {
       secondaryCta: "See published apps",
       metrics: [
         { value: "50+", label: "Clients with apps built by SanTech" },
-        { value: "5+", label: "Free, publicly available apps of our own" },
+        { value: "7+", label: "Free, publicly available apps of our own" },
         { value: "5", label: "Platforms (iOS, Android, Windows, macOS, Linux)" },
       ],
     },
@@ -255,10 +299,42 @@ export const content = {
       note: "These are our own free, publicly available apps. Apps for our 50+ clients are built under confidentiality agreements and are not listed here.",
       items: [
         {
+          name: "A la mesa",
+          tag: "Restaurants · QR",
+          category: "BusinessApplication",
+          schemaType: "SoftwareApplication",
+          operatingSystem: "Web",
+          impact:
+            "Digital menu and table-side ordering by QR code: guests order from their phone while the kitchen follows every order in real time.",
+          image: "./assets/products/a-la-mesa.jpg",
+          imageWebp: "./assets/products/a-la-mesa.webp",
+          imageAlt: "A la mesa digital menu and ordering screen on a phone",
+          links: [
+            { url: "https://www.alamesa.menu/en/", label: "Product site" },
+            { url: "https://www.alamesa.menu/hammilton", label: "Live demo" },
+          ],
+        },
+        {
+          name: "myTracker",
+          tag: "GPS tracking",
+          category: "NavigationApplication",
+          schemaType: "SoftwareApplication",
+          operatingSystem: "Web, Android and iOS",
+          impact:
+            "ESP32 GPS tracker (LTE + GNSS): live map, trip history, SMS commands, and an app for web, Android and iOS.",
+          image: "./assets/products/mytracker.jpg",
+          imageWebp: "./assets/products/mytracker.webp",
+          imageAlt: "myTracker dashboard with live map, devices and trip history",
+          links: [{ url: "https://mytracker.app", label: "Product site" }],
+        },
+        {
           name: "BuMa",
           tag: "Business management",
           category: "BusinessApplication",
           impact: "Complete inventory, sales, and finance control in a single app for small businesses.",
+          image: "./assets/products/buma.jpg",
+          imageWebp: "./assets/products/buma.webp",
+          imageAlt: "BuMa app screens: inventory, transactions and business setup",
           links: [
             { url: "https://play.google.com/store/apps/details?id=com.santech.buma", label: "View on Google Play" },
             { url: "https://buma-santech.github.io/", label: "Project site" },
@@ -269,6 +345,9 @@ export const content = {
           tag: "Entertainment",
           category: "GameApplication",
           impact: "Arcade-style memory game with a polished mobile experience.",
+          image: "./assets/products/simon-in-space.jpg",
+          imageWebp: "./assets/products/simon-in-space.webp",
+          imageAlt: "Simon in Space game screens",
           links: [
             { url: "https://simon-in-space-game.github.io/", label: "Play now" },
             { url: "https://play.google.com/store/apps/details?id=com.santech.simon_in_space", label: "View on Google Play" },
@@ -279,6 +358,9 @@ export const content = {
           tag: "Utilities",
           category: "UtilitiesApplication",
           impact: "Converts Apple Maps links to Google Maps and Waze, solving cross-platform compatibility issues.",
+          image: "./assets/products/apple2google-maps.jpg",
+          imageWebp: "./assets/products/apple2google-maps.webp",
+          imageAlt: "Apple2Google Maps app screens",
           links: [
             { url: "https://a2gmapc.github.io/", label: "Project site" },
             { url: "https://play.google.com/store/apps/details?id=org.santech.apple2googlemaps", label: "Apple2Google on Play" },
@@ -290,6 +372,9 @@ export const content = {
           tag: "Utilities",
           category: "UtilitiesApplication",
           impact: "Folder widget for organizing apps and shortcuts from the iOS home screen.",
+          image: "./assets/products/bigfolderwidget.jpg",
+          imageWebp: "./assets/products/bigfolderwidget.webp",
+          imageAlt: "AppFolderWidget screens on iOS",
           links: [{ url: "https://big-icon-folder-widget.github.io/", label: "Visit site" }],
         },
         {
@@ -297,6 +382,9 @@ export const content = {
           tag: "Open Source",
           category: "DesktopEnhancementApplication",
           impact: "Cross-platform desktop client for Psiphon built with Qt, available on macOS, Linux, and Windows.",
+          image: "./assets/products/psiphonqt.jpg",
+          imageWebp: "./assets/products/psiphonqt.webp",
+          imageAlt: "PsiphonQt screenshots on macOS, Windows and Linux",
           links: [{ url: "https://github.com/santech-inc/PsiphonQt", label: "View code on GitHub" }],
         },
       ],

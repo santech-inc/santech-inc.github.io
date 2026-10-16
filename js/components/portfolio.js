@@ -11,13 +11,26 @@ export function renderPortfolio(data) {
         )
         .join("");
 
+      const mediaHtml = item.image
+        ? `
+          <div class="case-media">
+            <picture>
+              ${item.imageWebp ? `<source type="image/webp" srcset="${escapeHtml(item.imageWebp)}" />` : ""}
+              <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.imageAlt || item.name)}" width="1200" height="750" loading="lazy" decoding="async" />
+            </picture>
+          </div>`
+        : "";
+
       return `
         <article class="case-card ${index === 0 ? "case-card-featured" : ""} panel reveal">
-          <span class="case-index">${escapeHtml(String(index + 1).padStart(2, "0"))}</span>
-          <span class="case-tag">${escapeHtml(item.tag)}</span>
-          <h3>${escapeHtml(item.name)}</h3>
-          <p>${escapeHtml(item.impact)}</p>
-          ${linksHtml ? `<div class="case-links">${linksHtml}</div>` : ""}
+          ${mediaHtml}
+          <div class="case-body">
+            <span class="case-index">${escapeHtml(String(index + 1).padStart(2, "0"))}</span>
+            <span class="case-tag">${escapeHtml(item.tag)}</span>
+            <h3>${escapeHtml(item.name)}</h3>
+            <p>${escapeHtml(item.impact)}</p>
+            ${linksHtml ? `<div class="case-links">${linksHtml}</div>` : ""}
+          </div>
         </article>
       `;
     })
