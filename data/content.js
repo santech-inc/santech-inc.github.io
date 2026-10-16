@@ -31,7 +31,7 @@ export const content = {
       secondaryCta: "Ver apps publicadas",
       metrics: [
         { value: "50+", label: "Clientes con apps desarrolladas por SanTech" },
-        { value: "7+", label: "Apps propias gratuitas y de acceso público" },
+        { value: "7+", label: "Productos y apps propios publicados" },
         { value: "5", label: "Plataformas (iOS, Android, Windows, macOS, Linux)" },
       ],
     },
@@ -56,7 +56,7 @@ export const content = {
     portfolio: {
       title: "Casos destacados",
       heading: "Nuestras apps públicas, ya en producción",
-      note: "Estas son nuestras apps propias, gratuitas y de acceso público. Las apps de más de 50 clientes se desarrollan bajo acuerdo de confidencialidad y no se listan aquí.",
+      note: "Estos son nuestros productos y apps propios, disponibles públicamente. Los proyectos de más de 50 clientes se desarrollan bajo acuerdo de confidencialidad y no se listan aquí.",
       items: [
         {
           name: "A la mesa",
@@ -271,7 +271,7 @@ export const content = {
       secondaryCta: "See published apps",
       metrics: [
         { value: "50+", label: "Clients with apps built by SanTech" },
-        { value: "7+", label: "Free, publicly available apps of our own" },
+        { value: "7+", label: "Our own products and apps, publicly available" },
         { value: "5", label: "Platforms (iOS, Android, Windows, macOS, Linux)" },
       ],
     },
@@ -296,7 +296,7 @@ export const content = {
     portfolio: {
       title: "Featured cases",
       heading: "Our public apps, already in production",
-      note: "These are our own free, publicly available apps. Apps for our 50+ clients are built under confidentiality agreements and are not listed here.",
+      note: "These are our own products and apps, publicly available. Projects for our 50+ clients are built under confidentiality agreements and are not listed here.",
       items: [
         {
           name: "A la mesa",
